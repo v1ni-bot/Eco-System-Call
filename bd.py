@@ -1,6 +1,7 @@
 from flask import Flask #Para criar a aplicação web com Flask.
 from flask_sqlalchemy import SQLAlchemy #Para integração com o banco de dados.
 from datetime import datetime
+import streamlit as st
 
 
 # Conexão com o banco de dados com GET, POST, DELET...
@@ -48,6 +49,7 @@ def cadastrar_canal(nome, tipo):
         mybd.session.add(dados_cadastro)
         mybd.session.commit()
         print("Dados inseridos com sucesso no banco de dados!")
+        return True
 
 if __name__ == '__main__':
     with app.app_context():

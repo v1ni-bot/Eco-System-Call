@@ -110,7 +110,8 @@ df_filtered = df_filtered[
 # Body
 st.title("Eco System Call") #Titulo
 st.header("Seu contato pessoal ao clima, diretamente a você!")
-st.info("Últimos dados coletados", icon="📈")
+last = df["tempo_registro"].tail(1).apply(lambda x: str(x.year) + "-" + str(x.month)+ "-" + str(x.day))
+st.info(f"Últimos dados coletados: {last.to_string(index=False)}", icon="📈")
 
 #Atualizar os dados
 if st.button("Atualizar Dados"): 

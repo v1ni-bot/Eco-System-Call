@@ -12,3 +12,4 @@ with form:
 
 if submit_bt:
     cadastrar_usuario(input_name, input_email)
+    st.info("Cadastrado com Sucesso!", icon="✅")
